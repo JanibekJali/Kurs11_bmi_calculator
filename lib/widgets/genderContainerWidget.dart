@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurs11_bmi_calc/constants/colors/app_colors.dart';
 
 class GenderContainerWidget extends StatelessWidget {
   const GenderContainerWidget({
@@ -28,8 +29,8 @@ class GenderContainerWidget extends StatelessWidget {
               genderText.toUpperCase(),
               style: TextStyle(
                 fontSize: 25,
-                color: Colors.white.withOpacity(0.8),
                 fontWeight: FontWeight.w500,
+                color: AppColors.white.withOpacity(0.8),
               ),
             )
           ],

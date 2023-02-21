@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           currentHeightState.toStringAsFixed(0),
                           style: TextStyle(
                             fontSize: 55,
-                            color: Colors.white,
+                            color: AppColors.white,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -75,8 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           'cm',
                           style: TextStyle(
                             fontSize: 20,
-                            color: Colors.white.withOpacity(0.8),
                             fontWeight: FontWeight.w800,
+                            color: AppColors.newwhite.withOpacity(0.8),
                           ),
                         ),
                       ],
