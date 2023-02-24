@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const Color white = Colors.white;
   static const Color mainColor = Color(0xff0B0120);
+
+  static Color newwhite = Colors.white.withOpacity(0.8);
   static Color secondaryColor = const Color(0xff211834);
   static Color black = const Color(0xff000000);
   static Color green = Colors.green;
@@ -21,4 +23,5 @@ class AppColors {
   static Color purpleAccent = Colors.purpleAccent;
   static Color redAccent = Colors.redAccent;
   static Color orangeAccent = Colors.orangeAccent;
+  static Color newgreen = Colors.green.shade800;
 }

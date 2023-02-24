@@ -16,7 +16,6 @@ enum Gender {
 
 enum Age {
   kosh,
-  kemit,
 }
 
 class Mashina {
