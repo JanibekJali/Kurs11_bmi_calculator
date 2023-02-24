@@ -5,34 +5,48 @@ class GenderContainerWidget extends StatelessWidget {
     super.key,
     required this.genderText,
     required this.icons,
+    required this.horizontal,
+    required this.vertical,
+    required this.onTap,
+    required this.colors,
   });
   final IconData icons;
   final String genderText;
+  final double horizontal;
+  final double vertical;
+  final void Function() onTap;
+  final Color colors;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xff0B0120),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Icon(
-              icons,
-              size: 80,
-              color: Colors.white,
-            ),
-            Text(
-              genderText.toUpperCase(),
-              style: TextStyle(
-                fontSize: 25,
-                color: Colors.white.withOpacity(0.8),
-                fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: colors,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: horizontal,
+            vertical: vertical,
+          ),
+          child: Column(
+            children: [
+              Icon(
+                icons,
+                size: 80,
+                color: Colors.white,
               ),
-            )
-          ],
+              Text(
+                genderText.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white.withOpacity(0.8),
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
