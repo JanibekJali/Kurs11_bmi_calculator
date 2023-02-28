@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kurs11_bmi_calc/constants/colors/app_colors.dart';
 import 'package:kurs11_bmi_calc/constants/text_styles/app_text_styles.dart';
+import 'package:kurs11_bmi_calc/data/local_data/bmi_calculator.dart';
+
 import 'package:kurs11_bmi_calc/widgets/calculate_widget.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
-
+  const ResultScreen({required this.height, required this.weight});
+  final double height;
+  final int weight;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    double bmi = BmiCalculatorData.calculateBmi(height: height, kg: weight);
     return Scaffold(
       backgroundColor: AppColors.secondaryColor,
       body: SafeArea(
@@ -31,8 +35,8 @@ class ResultScreen extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  height: size.height * 0.6,
-                  width: size.width * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  width: MediaQuery.of(context).size.width * 0.8,
                   decoration: BoxDecoration(
                     color: AppColors.mainColor,
                     borderRadius: BorderRadius.circular(12),
@@ -41,15 +45,15 @@ class ResultScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        'Нормалдуу',
+                        BmiCalculatorData.bmiResult(bmi).toString(),
                         style: AppTextStyles.green30w500,
                       ),
                       Text(
-                        '24.5',
+                        bmi.toStringAsFixed(1),
                         style: AppTextStyles.white80w500,
                       ),
                       Text(
-                        'Сиздин дене салмагыңыз нормалдуу. Азаматсыз!  ',
+                        BmiCalculatorData.giveDescription(bmi).toString(),
                         textAlign: TextAlign.center,
                         style: AppTextStyles.white12w500,
                       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kurs11_bmi_calc/constants/colors/app_colors.dart';
 import 'package:kurs11_bmi_calc/constants/text_styles/app_text_styles.dart';
+import 'package:kurs11_bmi_calc/screens/result_screen.dart';
 import 'package:kurs11_bmi_calc/widgets/calculate_widget.dart';
 import 'package:kurs11_bmi_calc/widgets/genderContainerWidget.dart';
 import 'package:kurs11_bmi_calc/widgets/weight_age_widget.dart';
@@ -94,21 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
   }
 
-  /// primer1
-  // void male() {
-  //   setState(() {
-  //     maleSelected = activeColor;
-  //     femaleSelected = inactiveColor;
-  //   });
-  // }
-
-  // void female() {
-  //   setState(() {
-  //     femaleSelected = activeColor;
-  //     maleSelected = inactiveColor;
-  //   });
-  // }
-
   Color maleSelected = inactiveColor;
   Color femaleSelected = inactiveColor;
 
@@ -123,19 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     setState(() {});
   }
-
-  /// primer2 san menen
-  // void maleFamale(int san) {
-  //   setState(() {});
-  //   if (san == 1) {
-  //     maleSelected = activeColor;
-  //     femaleSelected = inactiveColor;
-  //   }
-  //   if (san == 2) {
-  //     femaleSelected = activeColor;
-  //     maleSelected = inactiveColor;
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -262,9 +235,12 @@ class _HomeScreenState extends State<HomeScreen> {
         bottomNavigationBar: CalculateWidget(
           labal: 'CalCulaTe',
           onTap: () {
-            Navigator.pushNamed(
+            Navigator.push(
               context,
-              '/resultScreen',
+              MaterialPageRoute(
+                builder: (context) =>
+                    ResultScreen(height: currentHeightState, weight: weight),
+              ),
             );
           },
         ),
