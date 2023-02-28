@@ -6,7 +6,7 @@ class BmiCalculatorData {
     return bmiJoop;
   }
 
-  static String? bmiResult(bmiJoop) {
+  static String? bmiResult(double bmiJoop) {
     if (bmiJoop >= 25) {
       return 'Семиз';
     } else if (bmiJoop > 18.5) {
@@ -17,7 +17,7 @@ class BmiCalculatorData {
     return null;
   }
 
-  static String? giveDescription(bmiJoop) {
+  static String? giveDescription(double bmiJoop) {
     if (bmiJoop >= 25) {
       return 'Код жазып отура бербей кыймылдаңыз';
     } else if (bmiJoop > 18.5) {
