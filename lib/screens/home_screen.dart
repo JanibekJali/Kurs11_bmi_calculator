@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double currentHeightState = 60;
   int weight = 65;
   int age = 30;
-
+  @override
   showAlertDialog(BuildContext context) {
     // set up the button
     Widget okButton = TextButton(

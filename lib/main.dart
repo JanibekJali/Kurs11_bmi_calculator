@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kurs11_bmi_calc/life_cycle_statfull_widget/first_view.dart';
 import 'package:kurs11_bmi_calc/screens/home_screen.dart';
-import 'package:kurs11_bmi_calc/screens/result_screen.dart';
 
 void main() {
   runApp(const BmiCalculator());
@@ -17,7 +17,8 @@ class BmiCalculator extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // initialRoute: '/homeScreen',
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      home: FirstView(),
       // routes: {
       //   '/homeScreen': (context) => HomeScreen(),
       //   '/resultScreen': (context) => ResultScreen(),
