@@ -17,8 +17,8 @@ class BmiCalculator extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // initialRoute: '/homeScreen',
-      // home: HomeScreen(),
-      home: FirstView(),
+      home: HomeScreen(),
+      // home: FirstView(),
       // routes: {
       //   '/homeScreen': (context) => HomeScreen(),
       //   '/resultScreen': (context) => ResultScreen(),

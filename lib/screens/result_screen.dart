@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:kurs11_bmi_calc/constants/colors/app_colors.dart';
 import 'package:kurs11_bmi_calc/constants/text_styles/app_text_styles.dart';
 import 'package:kurs11_bmi_calc/data/local_data/bmi_calculator.dart';
+import 'package:kurs11_bmi_calc/screens/home_controller.dart';
 
 import 'package:kurs11_bmi_calc/widgets/calculate_widget.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({required this.height, required this.weight});
-  final double height;
-  final int weight;
+  const ResultScreen();
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    double bmi = BmiCalculatorData.calculateBmi(height: height, kg: weight);
+    double bmi = BmiCalculatorData.calculateBmi(
+        height: homeController.currentHeightState.value,
+        kg: homeController.weight.value);
     return Scaffold(
       backgroundColor: AppColors.secondaryColor,
       body: SafeArea(
