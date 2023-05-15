@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kurs11_bmi_calc/life_cycle_statfull_widget/first_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kurs11_bmi_calc/screens/cubit/home_cubit.dart';
 import 'package:kurs11_bmi_calc/screens/home_screen.dart';
 
 void main() {
@@ -17,7 +18,10 @@ class BmiCalculator extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // initialRoute: '/homeScreen',
-      home: HomeScreen(),
+      home: BlocProvider(
+        create: (context) => HomeCubit(),
+        child: HomeScreen(),
+      ),
       // home: FirstView(),
       // routes: {
       //   '/homeScreen': (context) => HomeScreen(),

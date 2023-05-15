@@ -12,8 +12,6 @@ class HomeController extends GetxController {
   Rx<int> age = 30.obs;
   Rx<Color> maleSelected = AppColors.inactiveColor.obs;
   Rx<Color> femaleSelected = AppColors.inactiveColor.obs;
-  final Rx<GlobalKey<ScaffoldMessengerState>> scaffoldKey =
-      GlobalKey<ScaffoldMessengerState>().obs;
 
   ageFunction(String ageMP) {
     if (ageMP == '-') {
